@@ -27,5 +27,5 @@ script:
   - msys2-prepare
   - msys2-wrapper "wget https://github.com/Alexpux/MSYS2-packages/raw/master/xz/PKGBUILD"
   - msys2-wrapper "wget https://github.com/Alexpux/MSYS2-packages/raw/master/xz/xz-5.0.5-msys2.patch"
-  - msys2-wrapper "makepkg -s --noconfirm --noprogressbar --skippgpcheck -f"
+  - travis_wait msys2-wrapper "makepkg -s --noconfirm --noprogressbar --skippgpcheck -f"
 
