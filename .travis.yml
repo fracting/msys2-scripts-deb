@@ -30,4 +30,5 @@ script:
   - pkgbuild_repo=https://github.com/fracting/MSYS2-packages/trunk/xz
   - svn co ${pkgbuild_repo} ${srcdir}
   - cp ${srcdir}/* ~
+  - msys2-prepare
   - msys2-wrapper "makepkg -s -f --noconfirm --skippgpcheck"
