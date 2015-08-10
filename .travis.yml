@@ -30,9 +30,9 @@ compiler:
   - gcc
 
 script:
-  - svn co https://github.com/fracting/MSYS2-packages/trunk/xz
-  - cd xz
   - msys2-init ${CACHE}
   - msys2-pack v1
   - ./upload.sh
+  - svn co https://github.com/fracting/MSYS2-packages/trunk/xz
+  - cd xz
   - msys2-shell -c "makepkg -s -f --noconfirm --skippgpcheck ${NOCHECK}"
