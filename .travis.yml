@@ -25,10 +25,7 @@ compiler:
   - gcc
 
 script:
-  - srcdir=~/src
-  - subdir=xz
-  - pkgbuild_repo=https://github.com/fracting/MSYS2-packages/trunk/xz
-  - svn co ${pkgbuild_repo} ${srcdir}
-  - cp ${srcdir}/* ~
+  - svn co https://github.com/fracting/MSYS2-packages/trunk/xz
+  - cd xz
   - msys2-init
   - msys2-shell -c "makepkg -s -f --noconfirm --skippgpcheck"
