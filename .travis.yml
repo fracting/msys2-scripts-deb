@@ -3,7 +3,9 @@ os:
 
 env:
   - WINEARCH=win32
-  - WINEARCH=""
+  - WINEARCH=win64
+  - WINEARCH="" # WoW64
+  - NOCHECK="--nocheck"
 
 cache: apt
 
@@ -28,4 +30,4 @@ script:
   - svn co https://github.com/fracting/MSYS2-packages/trunk/xz
   - cd xz
   - msys2-init
-  - msys2-shell -c "makepkg -s -f --noconfirm --skippgpcheck"
+  - msys2-shell -c "makepkg -s -f --noconfirm --skippgpcheck ${NOCHECK}"
