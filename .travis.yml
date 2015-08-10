@@ -6,6 +6,9 @@ env:
   - WINEARCH=win64
   - WINEARCH="" # WoW64
   - NOCHECK="--nocheck"
+  - WINEARCH=win32 CACHE="--cache https://dl.dropboxusercontent.com/u/38458267/msys2/msys2-20150512_v1_i686.tar.gz"
+  - WINEARCH=win64 CACHE="--cache https://dl.dropboxusercontent.com/u/38458267/msys2/msys2-20150512_v1_x86_64.tar.gz"
+
 
 cache: apt
 
@@ -29,7 +32,7 @@ compiler:
 script:
   - svn co https://github.com/fracting/MSYS2-packages/trunk/xz
   - cd xz
-  - msys2-init
+  - msys2-init ${CACHE}
   - msys2-pack v1
   - ./upload.sh
   - msys2-shell -c "makepkg -s -f --noconfirm --skippgpcheck ${NOCHECK}"
