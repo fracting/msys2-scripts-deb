@@ -6,8 +6,8 @@ env:
   - WINEARCH=win64
   - WINEARCH="" # WoW64
   - NOCHECK="--nocheck"
-  - WINEARCH=win32 CACHE="--cache https://dl.dropboxusercontent.com/u/38458267/msys2/msys2-20150512_v1_i686.tar.gz"
-  - WINEARCH=win64 CACHE="--cache https://dl.dropboxusercontent.com/u/38458267/msys2/msys2-20150512_v1_x86_64.tar.gz"
+  - WINEARCH=win32 CACHE="--cache https://dl.dropboxusercontent.com/u/38458267/msys2/msys2-pack-20150512_v1_i686.tar.gz"
+  - WINEARCH=win64 CACHE="--cache https://dl.dropboxusercontent.com/u/38458267/msys2/msys2-pack-20150512_v1_x86_64.tar.gz"
 
 
 cache: apt
