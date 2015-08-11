@@ -2,12 +2,12 @@ os:
   - linux
 
 env:
-  - WINEARCH=win32
-  - WINEARCH=win64
+  - WINEARCH=win32 DEPLOY=true
+  - WINEARCH=win64 DEPLOY=true
   - WINEARCH="" # WoW64
   - NOCHECK="--nocheck"
-  - WINEARCH=win32 CACHE="--cache https://dl.dropboxusercontent.com/u/38458267/msys2/msys2-pack-20150512_v1_i686.tar.gz"
-  - WINEARCH=win64 CACHE="--cache https://dl.dropboxusercontent.com/u/38458267/msys2/msys2-pack-20150512_v1_x86_64.tar.gz"
+  - WINEARCH=win32 CACHE="--cache https://s3.amazonaws.com/fracting/msys2/pack/msys2-pack-20150512_v1_i686.tar.gz"
+  - WINEARCH=win64 CACHE="--cache https://s3.amazonaws.com/fracting/msys2/pack/msys2-pack-20150512_v1_x86_64.tar.gz"
 
 
 cache: apt
@@ -42,4 +42,6 @@ deploy:
   secret_access_key: "VZ8zXtWsOdFksYb1MKRpmRy5jFV99K8cnUPegX2/"
   bucket: "fracting/msys2/pack"
   skip_cleanup: true
+  acl: public_read
   local_dir: ${HOME}/msys2-pack
+  on: $DEPLOY = true
