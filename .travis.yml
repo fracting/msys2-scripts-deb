@@ -37,9 +37,9 @@ script:
     #  - msys2-shell -c "makepkg -s -f --noconfirm --skippgpcheck ${NOCHECK}"
 
 deploy:
-    - provider: s3
-    - access_key_id: "AKIAI332BORZKTHFBYBA"
-    - secret_access_key: "VZ8zXtWsOdFksYb1MKRpmRy5jFV99K8cnUPegX2"
-    - bucket: "fracting-msys2"
-    - skip_cleanup: true
-    - local_dir: ${HOME}/msys2-pack
+  provider: s3
+  access_key_id: "AKIAI332BORZKTHFBYBA"
+  secret_access_key: "VZ8zXtWsOdFksYb1MKRpmRy5jFV99K8cnUPegX2"
+  bucket: "fracting-msys2"
+  skip_cleanup: true
+  local_dir: ${HOME}/msys2-pack
